@@ -11,7 +11,7 @@ class Input extends React.Component {
         event.preventDefault();
         const ingredients = this.textInput.value;
         //break down ingredients to strings
-        this.props.dispatch(actions.fetchRecipesRequest(ingredients))
+        this.props.dispatch(actions.fetchRecipes(ingredients))
         console.log('fired off fetchRecipesRequest', ingredients)
         this.textInput.value = '';
     }
@@ -32,7 +32,6 @@ class Input extends React.Component {
     }
 }
 
-// const mapStateToProps = (state, props) => ({recipes: state.recipes})
-// connect(mapStateToProps)
+const mapStateToProps = (state, props) => ({recipes: state.recipes})
 
-export default Input;
+export default connect(mapStateToProps)(Input);

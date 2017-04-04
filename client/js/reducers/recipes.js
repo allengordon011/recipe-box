@@ -10,8 +10,8 @@ const recipes = (state = initialState, action) => {
             {
                 console.log('Fetch recipes request');
                 return {
-                    ...state,
-                    recipes: action.recipes
+                    ...state
+                    //loading
                 }
             }
         case actions.FETCH_RECIPES_SUCCESS:

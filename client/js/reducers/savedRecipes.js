@@ -19,17 +19,17 @@ const savedRecipes = (state = initialState, action) => {
                 console.log('Fetch saved recipes success');
                 return {
                     ...state,
-                    savedRecipes: action.recipes
+                    savedRecipes: action.savedRecipes
                 }
             }
-        case actions.SAVE_RECIPE:
-            {
-                console.log('Saved recipe!');
-                return {
-                    ...state,
-                    savedRecipes: action.recipes
-                }
-            }
+        // case actions.SAVE_RECIPE:
+        //     {
+        //         console.log('Saved recipe!');
+        //         return {
+        //             ...state,
+        //             savedRecipes: action.savedRecipes
+        //         }
+        //     }
         case actions.FETCH_ERROR:
             {
                 return {

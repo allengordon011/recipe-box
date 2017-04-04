@@ -7,7 +7,7 @@ class RecipesList extends React.Component {
         super(props);
     }
     componentWillMount() {
-        this.props.dispatch(actions.fetchRecipesRequest());
+        this.props.dispatch(actions.fetchSavedRecipes());
     }
     render() {
         console.log('fetched recipes props: ', this.props)
