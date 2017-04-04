@@ -38,15 +38,20 @@ const recipesUrl = "http://food2fork.com/api/search?key=c3079463ea04cd06c17bb1de
 
 export const fetchRecipes = (ingredients) => dispatch => {
     dispatch(fetchRecipesRequest())
-    console.log(recipesUrl + ingredients)
-    // fetch(recipesUrl + ingredients).then(response => {
-    //     if (!response.ok) {
-    //         const error = new Error(response.statusText)
-    //         error.response = response
-    //         throw error;
-    //     }
-    //     return response;
-    // }).then(response => response.json()).then(json => dispatch(fetchRecipesSuccess(json))).catch(error => dispatch(fetchError(error)));
+    fetch(recipesUrl + ingredients, {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json'
+            }
+      })
+      .then(response => {
+        if (!response.ok) {
+            const error = new Error(response.statusText)
+            error.response = response
+            throw error;
+        }
+        return response;
+    }).then(response => response.json()).then(json => dispatch(fetchRecipesSuccess(json.recipes))).catch(error => dispatch(fetchError(error)));
 };
 
 const savedRecipesUrl = `/api/`;
@@ -69,14 +74,14 @@ export const fetchSavedRecipes = () => dispatch => {
 export const postRecipe = (recipe) => dispatch => {
     // dispatch(saveRecipe())
     return fetch(savedRecipesUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          recipe
-        })
-  })
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              recipe
+            })
+      })
   .then(response => response.json())
   .then(json => dispatch(fetchSavedRecipesSuccess(json)))
 }

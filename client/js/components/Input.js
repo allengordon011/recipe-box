@@ -9,8 +9,8 @@ class Input extends React.Component {
     }
     fetchRecipes(event) {
         event.preventDefault();
-        const ingredients = this.textInput.value;
-        //break down ingredients to strings
+        const text = this.textInput.value;
+        let ingredients = text.replace(/\s/g,',');
         this.props.dispatch(actions.fetchRecipes(ingredients))
         console.log('fired off fetchRecipesRequest', ingredients)
         this.textInput.value = '';
