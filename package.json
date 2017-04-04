@@ -1,7 +1,7 @@
 {
-  "name": "thinkful-full-stack-template",
+  "name": "recipe-blender",
   "version": "0.0.1",
-  "description": "A full-stack template for Thinkful students",
+  "description": "An app for searching and saving recipes",
   "main": "index.js",
   "main:server": "server/index.js",
   "main:client": "client/js/index.js",
@@ -61,7 +61,7 @@
     "clean:client:production:assets": "rm -rf build/production/client/assets",
     "build:client:production:assets": "run-s clean:client:production:assets && cp -r client/assets build/production/client"
   },
-  "author": "Joe Turner <joe@oampo.co.uk>",
+  "author": "Allen Gordon",
   "license": "UNLICENSED",
   "devDependencies": {
     "babel-cli": "^6.11.4",
@@ -81,7 +81,17 @@
     "webpack": "^1.13.1"
   },
   "dependencies": {
+    "body-parser": "^1.17.1",
     "express": "^4.14.0",
-    "isomorphic-fetch": "^2.2.1"
+    "isomorphic-fetch": "^2.2.1",
+    "mongoose": "^4.9.3",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.3",
+    "react-router": "^4.0.0",
+    "react-router-dom": "^4.0.0",
+    "react-tap-event-plugin": "^2.0.1",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0"
   }
 }
