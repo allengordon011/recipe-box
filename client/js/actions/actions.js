@@ -34,7 +34,7 @@ export const fetchError = error => ({
   error
 })
 
-const recipesUrl = "food2fork.com/api/search?key=c3079463ea04cd06c17bb1dee6ec6862&q="
+const recipesUrl = "https://api.edamam.com/search?app_id=ed380f4b&app_key=f3802ba6790fd75d04160d5c82da4433&from=0&to=3&q="
 
 export const fetchRecipes = (ingredients) => dispatch => {
     dispatch(fetchRecipesRequest())
