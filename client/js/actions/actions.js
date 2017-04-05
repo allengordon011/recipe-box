@@ -89,9 +89,8 @@ export const postRecipe = (recipe) => dispatch => {
 }
 
 export const deleteSavedRecipe = (id) => dispatch => {
-    console.log('DELETE ID: ', id)
-    // return fetch(savedRecipesUrl + id, {
-    // method: 'DELETE'
-    // })
-    // .then(() => dispatch(fetchSavedRecipes()))
+    return fetch(savedRecipesUrl + id, {
+    method: 'DELETE'
+    })
+    .then(() => dispatch(fetchSavedRecipes()))
 }

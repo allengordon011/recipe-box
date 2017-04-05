@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import * as actions from '../actions/actions';
 import RaisedButton from 'material-ui/RaisedButton';
 
-class ViewSavedButton extends React.Component {
+class SavedButtons extends React.Component {
     constructor(props) {
         super(props);
         this.handleClickEvent = this.handleClickEvent.bind(this);
@@ -11,12 +11,10 @@ class ViewSavedButton extends React.Component {
 
     }
     handleClickEvent() {
-        // event.preventDefault();
         this.props.dispatch(actions.fetchSavedRecipes())
         console.log('fired off fetchSavedRecipes')
     }
     handleHideClickEvent() {
-        // event.preventDefault();
         this.props.dispatch(actions.hideSavedRecipes())
         console.log('fired off hideSavedRecipes')
 
@@ -34,4 +32,4 @@ class ViewSavedButton extends React.Component {
 
 const mapStateToProps = (state, props) => ({savedRecipes: state.savedRecipes})
 
-export default connect(mapStateToProps)(ViewSavedButton);
+export default connect(mapStateToProps)(SavedButtons);

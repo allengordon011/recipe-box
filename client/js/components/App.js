@@ -4,7 +4,7 @@ import Header from './Header';
 import Input from './Input';
 import RecipesList from './RecipesList';
 import SavedRecipes from './SavedRecipes';
-import ViewSavedButton from './ViewSavedButton';
+import SavedButtons from './SavedButtons';
 
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
                 <RecipesList />
             </div>
             <div className="sidebar">
-                <ViewSavedButton />
+                <SavedButtons />
                 <SavedRecipes />
             </div>
         </div>

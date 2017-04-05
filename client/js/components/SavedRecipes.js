@@ -24,7 +24,7 @@ class SavedRecipes extends React.Component {
                         </div>
                         <img className="recipe-photo" src={recipe.recipe.image} alt="Photo" />
                             <RaisedButton label="Delete this Recipe" className="delete-recipe-button" onClick={() => {
-                                this.props.dispatch(actions.deleteSavedRecipe(recipe.recipe._id));
+                                this.props.dispatch(actions.deleteSavedRecipe(recipe._id));
                                 //make recipe.saved === true?
                             }} />
                     </section>
