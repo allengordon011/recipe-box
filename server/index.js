@@ -48,6 +48,19 @@ app.post('/api', function(req, res) {
   })
 })
 
+app.delete('/api/:id', (req, res) => {
+  Recipe.findByIdAndRemove(
+    {_id: req.params.id},
+    function(error){
+      if (error) {
+        console.error(error);
+        res.sendStatus(400);
+      }
+    res.sendStatus(204);
+    }
+  );
+})
+
 let server;
 
 function runServer(databaseUrl=DATABASE_URL, port=PORT) {

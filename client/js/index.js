@@ -13,13 +13,19 @@ injectTapEventPlugin();
 
 import store from './store';
 import App from './components/App';
+import Splash from './components/Splash';
 
 console.log(`Client running in ${process.env.NODE_ENV} mode`);
 
 const Main = () => (
     <Provider store={store}>
         <MuiThemeProvider>
-            <App />
+            <Router>
+                <Switch>
+                    <Route exact path="/" component={Splash} />
+                    <Route path="/main" component={App} />
+                </Switch>
+            </Router>
         </MuiThemeProvider>
     </Provider>
 );

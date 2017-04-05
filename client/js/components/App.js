@@ -4,6 +4,8 @@ import Header from './Header';
 import Input from './Input';
 import RecipesList from './RecipesList';
 import SavedRecipes from './SavedRecipes';
+import SavedButtons from './SavedButtons';
+
 
 function App() {
     return (
@@ -17,6 +19,7 @@ function App() {
                 <RecipesList />
             </div>
             <div className="sidebar">
+                <SavedButtons />
                 <SavedRecipes />
             </div>
         </div>

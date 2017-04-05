@@ -1,3 +1,69 @@
 * {
     font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+input {
+    min-width: 300px;
+    height: 20px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.input-form {
+    margin: 25px;
+}
+
+.food-carousel {
+    background: url('https://i2.wp.com/www.nourishmovelove.com/wp-content/uploads/2017/01/Avocado-Toast-Egg_Horizontal_2.jpg?fit=5184%2C3456&ssl=1') center center no-repeat;
+    background-size: cover;
+    min-width: 100%;
+    height: 200px;
+    margin-bottom: 50px;
+}
+
+.food-photo {
+    width: 100%;
+}
+
+.recipes-list {
+    display: flex;
+    justify-content: center;
+}
+
+.recipes-title {
+    margin: 35px 0 10px;
+}
+
+.recipe-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.recipe-box {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.recipe-title {
+    max-width: 300px;
+}
+
+.recipe-photo {
+    margin: 5px;
+    max-width: 300px;
+}
+
+.view-saved-button-container {
+    margin: 35px auto;
+}
+
+.saved-recipes-list {
+    display: flex;
+    justify-content: center;
+}
+
+hr {
+    margin-bottom: 10px;
 }
