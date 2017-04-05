@@ -1,7 +1,8 @@
 import * as actions from '../actions/actions';
 
 const initialState = {
-    savedRecipes: []
+    savedRecipes: [],
+    hidden: true
 };
 
 const savedRecipes = (state = initialState, action) => {
@@ -11,7 +12,7 @@ const savedRecipes = (state = initialState, action) => {
                 console.log('Fetch saved recipes request');
                 return {
                     ...state,
-                    savedRecipes: action.recipes
+                    hidden: false
                 }
             }
         case actions.FETCH_SAVED_RECIPES_SUCCESS:
@@ -30,6 +31,12 @@ const savedRecipes = (state = initialState, action) => {
         //             savedRecipes: action.savedRecipes
         //         }
         //     }
+        case actions.HIDE_SAVED_RECIPES: {
+            return {
+                ...state,
+                hidden: true
+            }
+        }
         case actions.FETCH_ERROR:
             {
                 return {

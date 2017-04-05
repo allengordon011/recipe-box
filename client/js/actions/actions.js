@@ -20,12 +20,18 @@ export const fetchRecipesSuccess = recipes => ({
 export const FETCH_SAVED_RECIPES_REQUEST = 'FETCH_SAVED_RECIPES_REQUEST';
 export const fetchSavedRecipesRequest = () => ({
   type: FETCH_SAVED_RECIPES_REQUEST
+  //loading
 })
 
 export const FETCH_SAVED_RECIPES_SUCCESS = 'FETCH_SAVED_RECIPES_SUCCESS';
 export const fetchSavedRecipesSuccess = savedRecipes => ({
   type: FETCH_SAVED_RECIPES_SUCCESS,
   savedRecipes
+})
+
+export const HIDE_SAVED_RECIPES = 'HIDE_SAVED_RECIPES';
+export const hideSavedRecipes = () => ({
+  type: HIDE_SAVED_RECIPES
 })
 
 export const FETCH_ERROR = 'FETCH_GOALS_ERROR';
@@ -52,18 +58,19 @@ export const fetchRecipes = (ingredients) => dispatch => {
 const savedRecipesUrl = `/api/`;
 
 export const fetchSavedRecipes = () => dispatch => {
-  return fetch(savedRecipesUrl)
-  .then(response => {
-    if (!response.ok) {
-      const error = new Error(response.statusText)
-      error.response = response
-      throw error;
-    }
-    return response;
-  })
-  .then(response => response.json())
-  .then(json => dispatch(fetchSavedRecipesSuccess(json)))
-  .catch(error => dispatch(fetchError(error)))
+    dispatch(fetchSavedRecipesRequest())
+    return fetch(savedRecipesUrl)
+    .then(response => {
+        if (!response.ok) {
+          const error = new Error(response.statusText)
+          error.response = response
+          throw error;
+        }
+        return response;
+      })
+      .then(response => response.json())
+      .then(json => dispatch(fetchSavedRecipesSuccess(json)))
+      .catch(error => dispatch(fetchError(error)))
 };
 
 export const postRecipe = (recipe) => dispatch => {
@@ -82,8 +89,9 @@ export const postRecipe = (recipe) => dispatch => {
 }
 
 export const deleteSavedRecipe = (id) => dispatch => {
-    return fetch(savedRecipesUrl + id, {
-    method: 'DELETE'
-  })
-  .then(() => dispatch(fetchSavedRecipes()))
+    console.log('DELETE ID: ', id)
+    // return fetch(savedRecipesUrl + id, {
+    // method: 'DELETE'
+    // })
+    // .then(() => dispatch(fetchSavedRecipes()))
 }
