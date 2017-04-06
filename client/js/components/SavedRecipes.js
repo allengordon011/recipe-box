@@ -19,9 +19,9 @@ class SavedRecipes extends React.Component {
             return (
                 <div className="recipe-container" key={i}>
                     <section className="recipe-box">
-                        <div className="recipe-title">
+                        <h3 className="recipe-title">
                             {recipe.recipe.title}
-                        </div>
+                        </h3>
                         <img className="recipe-photo" src={recipe.recipe.image} alt="Photo" />
                             <RaisedButton label="Delete this Recipe" className="delete-recipe-button" onClick={() => {
                                 this.props.dispatch(actions.deleteSavedRecipe(recipe._id));
