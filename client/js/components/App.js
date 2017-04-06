@@ -12,7 +12,7 @@ function App() {
         <div className="flex-container">
             <div className="main">
                 <Header />
-                <h1 className="title">Recipe Blender</h1>
+                <h1 className="title">Recipe Box</h1>
                 <hr />
                 <Input />
                 <hr />
