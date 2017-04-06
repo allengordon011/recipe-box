@@ -1,5 +1,5 @@
 {
-  "name": "recipe-blender",
+  "name": "recipe-box",
   "version": "0.0.1",
   "description": "An app for searching and saving recipes",
   "main": "index.js",
@@ -83,7 +83,9 @@
   "dependencies": {
     "body-parser": "^1.17.1",
     "express": "^4.14.0",
+    "history": "^4.6.1",
     "isomorphic-fetch": "^2.2.1",
+    "material-ui": "^0.17.1",
     "mongoose": "^4.9.3",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",

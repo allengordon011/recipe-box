@@ -19,9 +19,9 @@ class RecipesList extends React.Component {
                 return (
                     <div className="recipe-container" key={i}>
                         <section className="recipe-box">
-                            <div className="recipe-title">
+                            <h3 className="recipe-title">
                                 {title}
-                            </div>
+                            </h3>
                             <img className="recipe-photo" src={recipe.recipe.image} alt="Photo" />
                                 <RaisedButton label="Save this Recipe" className="save-recipe-button" onClick={() => {
                                     this.props.dispatch(actions.postRecipe(saveRecipeObj));
