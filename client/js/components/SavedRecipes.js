@@ -7,15 +7,10 @@ class SavedRecipes extends React.Component {
     constructor(props) {
         super(props);
     }
-    // componentWillMount() {
-    //     this.props.dispatch(actions.fetchSavedRecipes());
-    // }
     render() {
-        console.log('saved recipes props: ', this.props)
         let savedRecipesArray = this.props.savedRecipes.savedRecipes;
-        const savedRecipes = savedRecipesArray.length < 1 ? "Loading..." : savedRecipesArray.map((recipe, i) => {
-            console.log('saved RECIPE: ', recipe)
-            // let title = recipe.recipe.label.charAt(0).toUpperCase() + recipe.recipe.label.toLowerCase().slice(1);
+        const savedRecipes = savedRecipesArray.length < 1 ? "No Saved Recipes Yet..." : savedRecipesArray.map((recipe, i) => {
+            console.log('saved RECIPE: ', recipe);
             return (
                 <div className="recipe-container" key={i}>
                     <section className="recipe-box">
@@ -23,10 +18,8 @@ class SavedRecipes extends React.Component {
                             {recipe.recipe.title}
                         </h3>
                         <img className="recipe-photo" src={recipe.recipe.image} alt="Photo" />
-                            <RaisedButton label="Delete this Recipe" className="delete-recipe-button" onClick={() => {
-                                this.props.dispatch(actions.deleteSavedRecipe(recipe._id));
-                                //make recipe.saved === true?
-                            }} />
+                        <RaisedButton label="Make this Recipe" className="recipe-button" onClick={() => {
+                            window.open(recipe.recipe.url);}} />                          <RaisedButton label="Delete this Recipe" className="recipe-button" onClick={() => {this.props.dispatch(actions.deleteSavedRecipe(recipe._id));}} />
                     </section>
                 </div>
                )
@@ -35,8 +28,7 @@ class SavedRecipes extends React.Component {
         if(this.props.savedRecipes.hidden === false) {
         return (
             <div>
-                <h3 className="saved-recipes-title">Saved Recipes</h3>
-                <p className="saved-recipes-subtitle">Your favorite recipes!</p>
+                <h3 className="recipes-title">Saved Recipes</h3>
                 <div className="saved-recipes-list">
                 {savedRecipes}
                 </div>

@@ -13,9 +13,8 @@ class RecipesList extends React.Component {
         const recipesList = recipesArray.length === 0
             ? "Loading..."
             : recipesArray.map((recipe, i) => {
-                console.log('RECIPE: ', recipe)
                 let title = recipe.recipe.label.charAt(0).toUpperCase() + recipe.recipe.label.toLowerCase().slice(1);
-                let saveRecipeObj = {title: title, image: recipe.recipe.image, uri: recipe.recipe.uri};
+                let saveRecipeObj = {title: title, image: recipe.recipe.image, uri: recipe.recipe.uri, url: recipe.recipe.url};
                 return (
                     <div className="recipe-container" key={i}>
                         <section className="recipe-box">
@@ -23,10 +22,10 @@ class RecipesList extends React.Component {
                                 {title}
                             </h3>
                             <img className="recipe-photo" src={recipe.recipe.image} alt="Photo" />
-                                <RaisedButton label="Save this Recipe" className="save-recipe-button" onClick={() => {
-                                    this.props.dispatch(actions.postRecipe(saveRecipeObj));
-                                    //make recipe.saved === true?
-                                }} />
+                            <RaisedButton label="Make this Recipe" className="recipe-button" onClick={() => {
+                            window.open(recipe.recipe.url);}} />                            <RaisedButton label="Save this Recipe" className="recipe-button" onClick={() => {
+                            this.props.dispatch(actions.postRecipe(saveRecipeObj));}} />
+
                         </section>
                     </div>
                 )

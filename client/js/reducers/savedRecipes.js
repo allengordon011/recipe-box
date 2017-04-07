@@ -23,14 +23,6 @@ const savedRecipes = (state = initialState, action) => {
                     savedRecipes: action.savedRecipes
                 }
             }
-        // case actions.SAVE_RECIPE:
-        //     {
-        //         console.log('Saved recipe!');
-        //         return {
-        //             ...state,
-        //             savedRecipes: action.savedRecipes
-        //         }
-        //     }
         case actions.HIDE_SAVED_RECIPES: {
             return {
                 ...state,

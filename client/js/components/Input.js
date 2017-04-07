@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import * as actions from '../actions/actions';
+import RaisedButton from 'material-ui/RaisedButton';
 
 class Input extends React.Component {
     constructor(props) {
@@ -12,20 +13,17 @@ class Input extends React.Component {
         const text = this.textInput.value;
         let ingredients = text.replace(/\s/g,',');
         this.props.dispatch(actions.fetchRecipes(ingredients))
-        console.log('fired off fetchRecipesRequest', ingredients)
+        console.log('fired off fetchRecipesRequest')
         this.textInput.value = '';
     }
 
   render() {
         return (
-            <div className="container">
+            <div className="form-container">
                 <form className="input-form" onSubmit={this.fetchRecipes}>
-                    <div>
                         <label htmlFor="inputSuccess">Search</label>
-                        <div>
-                            <input type="text" className="input-input" id="inputSuccess" ref={input => this.textInput = input} placeholder="type in your ingredients and press enter"/>
-                        </div>
-                    </div>
+                            <input type="text" className="input-input" id="inputSuccess" ref={input => this.textInput = input} placeholder="type in your ingredients and press enter or click submit"/>
+                        <RaisedButton label="Submit" type="submit" className="submit-button"/>
                 </form>
             </div>
         )

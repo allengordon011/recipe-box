@@ -31,7 +31,7 @@ app.get('/api', (request, response) => {
 
 //post a recipes to db
 app.post('/api', function(req, res) {
-
+ 
   let recipe = new Recipe()
       recipe.recipe = req.body.recipe
       recipe.save((err, recipe) => {
