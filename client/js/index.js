@@ -24,7 +24,7 @@ console.log(`Client running in ${process.env.NODE_ENV} mode`);
 const Main = () => (
     <Provider store={store}>
         <MuiThemeProvider>
-            <Router basename="/">
+            <Router>
                 <Switch>
                     <Route exact path="/" component={Splash} />
                     <Route path="/main" component={App} />

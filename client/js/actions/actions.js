@@ -11,12 +11,6 @@ export const fetchRecipesSuccess = recipes => ({
   recipes
 })
 
-// export const SAVE_RECIPE = 'SAVE_RECIPE';
-// export const saveRecipe = recipe => ({
-//   type: SAVE_RECIPE,
-//   recipe
-// })
-
 export const FETCH_SAVED_RECIPES_REQUEST = 'FETCH_SAVED_RECIPES_REQUEST';
 export const fetchSavedRecipesRequest = () => ({
   type: FETCH_SAVED_RECIPES_REQUEST
@@ -40,7 +34,7 @@ export const fetchError = error => ({
   error
 })
 
-const recipesUrl = "https://api.edamam.com/search?app_id=ed380f4b&app_key=f3802ba6790fd75d04160d5c82da4433&from=0&to=3&q="
+const recipesUrl = "https://api.edamam.com/search?app_id=ed380f4b&app_key=f3802ba6790fd75d04160d5c82da4433&from=0&to=6&q="
 
 export const fetchRecipes = (ingredients) => dispatch => {
     dispatch(fetchRecipesRequest())
