@@ -7,7 +7,7 @@ const Description = () => {
         <div className="description-item">
               <i className="material-icons md-48">search</i>
               <h3 className="description-title">Search for Recipes</h3>
-              <p>What's on hand?</p>
+              <p>What's in yo fridge?</p>
         </div>
         <div className="description-item">
           <i className="material-icons md-48">save</i>
@@ -15,9 +15,9 @@ const Description = () => {
           <p>Love it? Save it for later!</p>
         </div>
         <div className="description-item">
-          <i className="material-icons md-48">verified_user</i>
-          <h3 className="description-title">Facebook Login</h3>
-          <p>Hopefully you can do this!</p>
+          <i className="material-icons md-48">star</i>
+          <h3 className="description-title">Rate Recipes</h3>
+          <p>Rate your saved recipes!</p>
         </div>
       </div>
     )

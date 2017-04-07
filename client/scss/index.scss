@@ -5,6 +5,9 @@
 
 body {
     margin: 0;
+    display: flex;
+    flex-direction: column;
+
 }
 
 .flex-container {
@@ -12,7 +15,7 @@ body {
 }
 
 .splash-container {
-    margin: 75px auto 0;
+    margin: 125px auto 0;
 }
 
 .description-container {
@@ -24,9 +27,14 @@ body {
 
 .description-item {
     border: 1px solid #f1da36;
-    padding: 20px 35px;
-    min-width: 175px;
-    margin: 0 10px;
+    border-radius: 50%;
+    padding: 10px;
+    min-width: 200px;
+    min-height: 200px;
+    margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .description-title {
@@ -62,7 +70,7 @@ h1 {
 h3 {
     font-family: 'Caveat', cursive;
     font-size: 1.2em;
-    margin: 5px 0;
+    margin: 5px 0 0;
 }
 
 p {
@@ -151,6 +159,11 @@ input {
     margin-right: 5px;
 }
 
+.saved-recipes-box {
+    transition-timing-function: ease;
+    transition: .5s;
+}
+
 .saved-recipes-list {
     display: flex;
     justify-content: center;
@@ -165,7 +178,7 @@ input {
 }
 
 .enter {
-    margin: 50px 0;
+    margin: 75px 0;
 }
 
 hr {
@@ -212,11 +225,11 @@ hr {
         padding: 0;
         margin: 15px 15px 25px;
     }
-    // .main {
-    //     margin: 0 5px;
-    // }
     form {
         margin: 15px;
+    }
+    input {
+        min-width: 200px;
     }
     h3 {
         margin: 0 0 5px;

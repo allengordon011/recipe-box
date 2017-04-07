@@ -88,3 +88,17 @@ export const deleteSavedRecipe = (id) => dispatch => {
     })
     .then(() => dispatch(fetchSavedRecipes()))
 }
+
+export const rateRecipe = (id, rating) => dispatch => {
+    return fetch(savedRecipesUrl + id, {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              rating
+            })
+      })
+  .then(response => response.json())
+  .then(json => dispatch(fetchSavedRecipesSuccess(json)))
+}

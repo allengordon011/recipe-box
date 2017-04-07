@@ -31,7 +31,7 @@ app.get('/api', (request, response) => {
 
 //post a recipes to db
 app.post('/api', function(req, res) {
- 
+
   let recipe = new Recipe()
       recipe.recipe = req.body.recipe
       recipe.save((err, recipe) => {
@@ -60,6 +60,26 @@ app.delete('/api/:id', (req, res) => {
     }
   );
 })
+
+app.put('/api/:id', (req, res) => {
+  Recipe.findOneAndUpdate(
+    {_id: req.params.id},
+    {$set:{rating: req.body.rating}},
+    {upsert: true},
+    function(error){
+      if (error) {
+        console.error(error);
+        res.sendStatus(400);
+      }
+      Recipe.find({}, (err, goal) => {
+          if(err){
+              res.send(err)
+          }
+          res.json(goal)
+      })
+      }
+  );
+});
 
 let server;
 
