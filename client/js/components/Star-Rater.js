@@ -13,7 +13,7 @@ function StarRater(props) {
             starIcon="star_border"
         }
         const star = (
-            <i className="material-icons md-24" key={i} id={id}
+            <i className="material-icons md-24" key={i} id="star-icon"
                onClick={props.onChange.bind(null, i + 1, id)}>{starIcon}
             </i>
         );

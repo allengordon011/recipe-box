@@ -22,7 +22,7 @@ class RecipesList extends React.Component {
                                 {title}
                             </h3>
                             <img className="recipe-photo" src={recipe.recipe.image} alt="Photo" />
-                            <RaisedButton label="Make this Recipe" className="recipe-button" onClick={() => {
+                            <RaisedButton label="View this Recipe" className="recipe-button" onClick={() => {
                             window.open(recipe.recipe.url);}} />                            <RaisedButton label="Save this Recipe" className="recipe-button" onClick={() => {
                             this.props.dispatch(actions.postRecipe(saveRecipeObj));}} />
 
@@ -33,10 +33,10 @@ class RecipesList extends React.Component {
         if(recipesArray.length >= 3) {
             return (
                 <div className="recipes-container">
-                    <h3 className="recipes-title">Which Recipe Will You Try Next?</h3>
                     <div className="recipes-list">
                         {recipesList}
                     </div>
+                    <hr />
                 </div>
         )} else {
             return <div className="recipes-list"></div>

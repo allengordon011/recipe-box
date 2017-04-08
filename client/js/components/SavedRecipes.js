@@ -20,7 +20,7 @@ class SavedRecipes extends React.Component {
     render() {
         let savedRecipesArray = this.props.savedRecipes.savedRecipes;
         const savedRecipes = savedRecipesArray.length < 1 ? "No Saved Recipes Yet..." : savedRecipesArray.map((recipe, i) => {
-            console.log('saved RECIPE: ', recipe);
+            // console.log('saved RECIPE: ', recipe);
             return (
                 <div className="recipe-container" key={i}>
                     <section className="recipe-box">
@@ -30,7 +30,7 @@ class SavedRecipes extends React.Component {
                         <img className="recipe-photo" src={recipe.recipe.image} alt="Photo" />
                         My Rating: <StarRater rating={recipe.rating} id={recipe._id}
                            onChange={this.changeRating}/>
-                        <RaisedButton label="Make this Recipe" className="recipe-button" onClick={() => {
+                        <RaisedButton label="View this Recipe" className="recipe-button" onClick={() => {
                             window.open(recipe.recipe.url);}} />                          <RaisedButton label="Delete this Recipe" className="recipe-button" onClick={() => {this.props.dispatch(actions.deleteSavedRecipe(recipe._id));}} />
                     </section>
                 </div>
@@ -46,8 +46,7 @@ class SavedRecipes extends React.Component {
                 </div>
             </div>
             );
-        } else { return <div></div>
-        }
+        } else { return <div></div> }
     }
 }
 
