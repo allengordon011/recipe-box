@@ -1,6 +1,6 @@
 # Recipe Box
 
-An app for searching recipes based on ingredients, with results sorted by rating or trends.
+An app for searching, saving, and rating recipes.
 
 ![screenshot](/Recipe-Box_Screenshot-Splash.png?raw=true "Splash Page")
 
