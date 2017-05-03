@@ -7,7 +7,7 @@ const Description = () => {
         <div className="description-item">
               <i className="material-icons md-48">search</i>
               <h3 className="description-title">Search for Recipes</h3>
-              <p>What's in yo fridge?</p>
+              <p>What's in your fridge?</p>
         </div>
         <div className="description-item">
           <i className="material-icons md-48">save</i>

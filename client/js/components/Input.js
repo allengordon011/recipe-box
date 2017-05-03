@@ -9,9 +9,9 @@ class Input extends React.Component {
         this.fetchRecipes = this.fetchRecipes.bind(this);
     }
 
-    componentDidMount() {
-        this.textInput.focus();
-  }
+  //   componentDidMount() {
+  //       this.textInput.focus();
+  // }
 
     fetchRecipes(event) {
         event.preventDefault();
@@ -28,7 +28,7 @@ class Input extends React.Component {
                 <h3 className="recipes-title">Which Recipe Will You Try Next?</h3>
                 <form className="input-form" onSubmit={this.fetchRecipes}>
                         <label htmlFor="inputSuccess">Search by ingredients or by recipe name</label>
-                            <input type="text" className="input-input" id="inputSuccess" ref={input => this.textInput = input} placeholder="press enter or click submit"/>
+                            <input type="text" className="input-input" id="inputSuccess" ref={input => this.textInput = input} placeholder="press enter or click search"/>
                         <RaisedButton label="Search" type="submit" className="search-button"/>
                 </form>
             </div>
