@@ -9,10 +9,6 @@ class Input extends React.Component {
         this.fetchRecipes = this.fetchRecipes.bind(this);
     }
 
-  //   componentDidMount() {
-  //       this.textInput.focus();
-  // }
-
     fetchRecipes(event) {
         event.preventDefault();
         const text = this.textInput.value;

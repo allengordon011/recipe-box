@@ -1,6 +1,7 @@
 import 'babel-polyfill';
 import express from 'express';
 import mongoose from 'mongoose';
+const path = require('path');
 import Recipe from '../models/recipe';
 
 import bodyParser from 'body-parser';
@@ -17,15 +18,19 @@ const app = express();
 app.use(jsonParser);
 app.use(express.static(process.env.CLIENT_PATH));
 
+app.get('/main', (req, res) => {
+  res.sendFile(path.resolve(process.env.CLIENT_PATH, 'index.html'));
+})
+
 //fetch recipes from db
-app.get('/api', (request, response) => {
+app.get('/api', (req, res) => {
   Recipe.find({})
-  .then((recipes) => {
-    return response.status(200).json(recipes);
+  .then(recipes => {
+    return res.status(200).json(recipes);
   })
   .catch(err => {
     console.error(err);
-    response.status(500).json({message: 'internal server error'})
+    res.status(500).json({message: 'internal server error'})
   })
 })
 
