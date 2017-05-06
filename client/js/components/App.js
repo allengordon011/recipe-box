@@ -12,7 +12,7 @@ function App() {
         <div className="flex-container">
             <div className="main">
                 <Header />
-                <hr />
+                <h2 className="main-title">Recipe Box</h2>
                 <Input />
                 <hr />
                 <RecipesList />
@@ -21,8 +21,6 @@ function App() {
                 <SavedButtons />
                 <SavedRecipes />
             </div>
-            <h2 className="main-title">Recipe Box</h2>
-            <p className="main-subtitle">Mix it, match it, enjoy!</p>
         </div>
     )
 }

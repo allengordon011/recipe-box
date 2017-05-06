@@ -8,9 +8,9 @@ function Splash() {
             <div className="splash-container">
                 <header>
                     <h1 className="title">Recipe Box</h1>
-                    <h3 className="subtitle">Mix it, match it, enjoy!</h3>
+                    <h3 className="subtitle">Let's mix it up!</h3>
                 </header>
-                <RaisedButton className="enter" label="ENTER" containerElement={<Link to="/main" />} />
+                <RaisedButton className="enter" label="ENTER" labelStyle={{ fontSize: '18px', lineHeight: '40px' }} containerElement={<Link to="/main" />} />
                 <Description />
             </div>
     )
