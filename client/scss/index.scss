@@ -3,10 +3,18 @@
     text-align: center;
 }
 
-body, html {
+html, body, #app, #app>div {
+  height: 100%
+}
+
+html, body {
     margin: 0;
     display: flex;
     flex-direction: column;
+}
+
+#app {
+    height: 100%;
 }
 
 .flex-container {
@@ -45,8 +53,8 @@ header {
     border: 3px solid #f1da36;
     border-radius: 50%;
     padding: 10px;
-    min-width: 200px;
-    min-height: 200px;
+    width: 200px;
+    height: 200px;
     margin: 0 20px;
     display: flex;
     flex-direction: column;
@@ -211,6 +219,13 @@ hr {
 }
 
 @media (max-width: 600px) {
+
+    html, body {
+      height: 100%
+    }
+    #app, #app>div {
+        height: auto;
+    }
     .flex-container {
         margin-bottom: 20px;
     }
@@ -275,6 +290,9 @@ hr {
     .main-title {
         font-size: 2.7em;
         margin: 0 35px;
+        text-align: center;
+    }
+    .recipe-title {
         text-align: center;
     }
 }
