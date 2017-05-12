@@ -31,9 +31,9 @@ html, body {
 
 header {
     margin: 125px 0 0;
-    width: 110%;
-    border: 3px solid #f1da36;
-    border-radius: 10px;
+    width: 100%;
+    border-top: 5px solid #f1da36;
+    border-bottom: 5px solid #f1da36;
     height: 180px;
     display: flex;
     flex-direction: column;
