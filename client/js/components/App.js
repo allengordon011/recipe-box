@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Header from './Header';
 import Input from './Input';
 import RecipesList from './RecipesList';
 import SavedRecipes from './SavedRecipes';
@@ -11,11 +10,13 @@ function App() {
     return (
         <div className="flex-container">
             <div className="main">
-                <Header />
-                <h2 className="main-title">Recipe Box</h2>
-                <Input />
-                <hr />
-                <RecipesList />
+              <div className='food-carousel'>
+                <section className="main-shadow-box">
+                  <h2 className="main-title">Recipe Box</h2>
+                  <Input />
+                </section>
+              </div>
+              <RecipesList />
             </div>
             <div className="saved-container">
                 <SavedButtons />

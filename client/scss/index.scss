@@ -3,19 +3,16 @@
     text-align: center;
 }
 
-html, body, #app, #app>div {
-  height: 100%
-}
-
 html, body {
+    height: 100%;
     margin: 0;
     display: flex;
     flex-direction: column;
 }
 
-#app {
-    height: 100%;
-}
+// #app, #app>div {
+//     height: 100%;
+// }
 
 .flex-container {
     margin-bottom: 50px;
@@ -104,7 +101,7 @@ label {
 input {
     min-width: 400px;
     height: 30px;
-    margin: 15px 0 25px;
+    margin: 15px 0;
     border-radius: 5px;
     font-size: 1em;
 }
@@ -126,12 +123,28 @@ input {
     background: url('https://s3.us-east-2.amazonaws.com/trig010/egg_header.jpg') center center no-repeat;
     background-size: cover;
     min-width: 100%;
-    height: 215px;
-    margin-bottom: 35px;
+    height: 400px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .food-photo {
     width: 100%;
+}
+
+.main-shadow-box {
+  margin: 50px 0;
+  padding: 15px 0;
+  width: 100%;
+  border-top: 5px solid #f1da36;
+  border-bottom: 5px solid #f1da36;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, .6);
+  color: white;
 }
 
 .recipes-list {
@@ -258,10 +271,7 @@ hr {
         flex-direction: column;
     }
     .title {
-        font-size: 3.5em;
-    }
-    .subtitle {
-        font-size: 1.7em;
+        font-size: 3.7em;
     }
     .enter {
         margin: 15px 0 15px 0;
@@ -273,7 +283,6 @@ hr {
     }
     form {
         margin: 15px;
-        font-size: .8em;
     }
     label {
         font-size: 1.1em;
@@ -284,13 +293,8 @@ hr {
     h3 {
         margin: 0 0 5px;
     }
-    .recipes-title {
-        font-size: 1.3em;
-    }
-    .main-title {
-        font-size: 2.7em;
-        margin: 0 35px;
-        text-align: center;
+    .food-carousel {
+      height: 425px;
     }
     .recipe-title {
         text-align: center;
